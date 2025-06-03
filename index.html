@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فرزاد (سیروان) محمدی | هنرمند و سازنده محصولات دست‌ساز</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#5C6D57',secondary:'#A9B388'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Vazirmatn', sans-serif;
+direction: rtl;
+}
+.skill-chart {
+height: 200px;
+width: 100%;
+}
+.timeline-item::before {
+content: '';
+position: absolute;
+width: 16px;
+height: 16px;
+border-radius: 50%;
+background-color: #5C6D57;
+right: -8px;
+top: 24px;
+}
+.timeline-item::after {
+content: '';
+position: absolute;
+width: 2px;
+height: 100%;
+background-color: #E5E7EB;
+right: 0;
+top: 24px;
+}
+.timeline-item:last-child::after {
+display: none;
+}
+.portfolio-item:hover .portfolio-overlay {
+opacity: 1;
+}
+.portfolio-overlay {
+opacity: 0;
+transition: opacity 0.3s ease;
+}
+.filter-btn.active {
+background-color: #5C6D57;
+color: white;
+}
+.nav-link.active {
+color: #5C6D57;
+font-weight: 600;
+border-bottom: 2px solid #5C6D57;
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #5C6D57;
+}
+.custom-checkbox {
+position: relative;
+padding-right: 30px;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+right: 0;
+height: 20px;
+width: 20px;
+background-color: #f9f9f9;
+border: 1px solid #ddd;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #f0f0f0;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #5C6D57;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+right: 7px;
+top: 3px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-[#F8F7F3] text-gray-800">
+<!-- Header/Navigation -->
+<header class="sticky top-0 z-50 bg-white shadow-sm">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<a href="#" class="text-2xl font-bold text-primary">فرزاد محمدی</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex space-x-8 space-x-reverse">
+<a href="#home" class="nav-link px-2 py-1 hover:text-primary transition-colors active">خانه</a>
+<a href="#about" class="nav-link px-2 py-1 hover:text-primary transition-colors">درباره من</a>
+<a href="#skills" class="nav-link px-2 py-1 hover:text-primary transition-colors">مهارت‌ها</a>
+<a href="#portfolio" class="nav-link px-2 py-1 hover:text-primary transition-colors">نمونه کارها</a>
+<a href="#resume" class="nav-link px-2 py-1 hover:text-primary transition-colors">رزومه</a>
+<a href="#contact" class="nav-link px-2 py-1 hover:text-primary transition-colors">تماس</a>
+</nav>
+<!-- Mobile Menu Button -->
+<button id="mobile-menu-button" class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700">
+<i class="ri-menu-line ri-lg"></i>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+<div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+<a href="#home" class="mobile-nav-link py-2 hover:text-primary transition-colors">خانه</a>
+<a href="#about" class="mobile-nav-link py-2 hover:text-primary transition-colors">درباره من</a>
+<a href="#skills" class="mobile-nav-link py-2 hover:text-primary transition-colors">مهارت‌ها</a>
+<a href="#portfolio" class="mobile-nav-link py-2 hover:text-primary transition-colors">نمونه کارها</a>
+<a href="#resume" class="mobile-nav-link py-2 hover:text-primary transition-colors">رزومه</a>
+<a href="#contact" class="mobile-nav-link py-2 hover:text-primary transition-colors">تماس</a>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="relative py-20 bg-cover bg-center bg-no-repeat" style="background-image: url('https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/46779a837f92a3d9e9fe4b63336ca3d8.jpeg'); background-size: cover;">
+<div class="container mx-auto px-4 relative z-10">
+<div class="flex flex-col md:flex-row items-center">
+<div class="w-full md:w-1/2 text-right mb-10 md:mb-0 bg-white/90 p-8 rounded-lg shadow-lg backdrop-opacity-100">
+<h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">فرزاد (سیروان) محمدی</h1>
+<h2 class="text-xl md:text-2xl font-medium text-gray-800 mb-6">هنرمند و سازنده محصولات دست‌ساز</h2>
+<p class="text-lg text-gray-700 mb-8 leading-relaxed">
+با تلفیق هنر، طبیعت و خلاقیت، محصولات کاربردی و زیبا می‌سازم. مسیر من از طراحی و نقاشی دودلینگ آغاز شد و اکنون با برند «گره بقا» محصولات پاراکوردی و طبیعت‌محور تولید می‌کنم.
+</p>
+<div class="flex space-x-4 space-x-reverse">
+<a href="#portfolio" class="bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">مشاهده نمونه کارها</a>
+<a href="#contact" class="bg-white text-primary px-6 py-3 rounded-button hover:bg-gray-100 transition-all whitespace-nowrap border border-primary">تماس با من</a>
+</div>
+</div>
+<div class="w-full md:w-1/2 flex justify-center">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/e79f317c9f73902cb7d5a514a6a90162.jpeg" alt="فرزاد محمدی" class="rounded-full w-64 h-64 object-cover border-8 border-white/90 shadow-2xl">
+</div>
+</div>
+</div>
+</section>
+<!-- About Me Section -->
+<section id="about" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">درباره من</h2>
+<div class="flex flex-col md:flex-row items-center gap-10">
+<div class="w-full md:w-2/5">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/b73aff8a7b52f593963f17df585e9bef.jpeg" alt="فرزاد محمدی در حال کار" class="rounded-lg shadow-lg w-full h-auto">
+</div>
+<div class="w-full md:w-3/5">
+<h3 class="text-2xl font-semibold mb-4">مسیر هنری و حرفه‌ای من</h3>
+<p class="mb-4 leading-relaxed">
+سلام! من فرزاد محمدی هستم که با نام هنری سیروان نیز شناخته می‌شوم. مسیر هنری من از کودکی با علاقه به طراحی و نقاشی آغاز شد. با گذشت زمان، سبک دودلینگ به یکی از علاقه‌مندی‌های اصلی من تبدیل شد و توانستم با ترکیب خطوط ساده، اشکال پیچیده و جذابی خلق کنم.
+</p>
+<p class="mb-4 leading-relaxed">
+چند سال پیش، با دنیای پاراکورد آشنا شدم و این آشنایی به سرعت به یک اشتیاق تبدیل شد. ترکیب هنر بافتنی با کاربرد عملی در طبیعت و زندگی روزمره برایم بسیار جذاب بود. این علاقه منجر به تأسیس برند «گره بقا» شد، جایی که در آن محصولات کاربردی و زیبا با الهام از طبیعت تولید می‌کنم.
+</p>
+<p class="mb-6 leading-relaxed">
+امروز، در کنار فعالیت‌های هنری و تولیدی، در حال یادگیری ابزارهای دیجیتال مارکتینگ مانند Google Ads، Google Tag Manager و Google Analytics هستم تا بتوانم برند خود را به شکلی حرفه‌ای‌تر توسعه دهم و با مخاطبان بیشتری ارتباط برقرار کنم.
+</p>
+<div class="flex flex-wrap gap-3">
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">طراحی و نقاشی</span>
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">دودلینگ</span>
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">پاراکورد</span>
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">صنایع دستی</span>
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">محصولات طبیعت‌محور</span>
+<span class="bg-gray-100 text-gray-800 px-4 py-2 rounded-full text-sm">دیجیتال مارکتینگ</span>
+</div>
+</div>
+</div>
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-brush-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-3">پیشینه هنری</h4>
+<p class="text-gray-700">
+بیش از 10سال تجربه در زمینه طراحی و نقاشی، با تمرکز ویژه بر سبک دودلینگ و ترکیب هنرهای انتزاعی با دیدگاه‌های مدرن و روانشناختی . شرکت در چندین نمایشگاه هنری و همکاری با هنرمندان مختلف.
+</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-links-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-3">برند گره بقا</h4>
+<p class="text-gray-700">
+تأسیس برند «گره بقا» با هدف تولید محصولات پاراکوردی کاربردی و زیبا. طراحی و تولید انواع دستبند، گردنبند، جاکلیدی و لوازم کاربردی با تکنیک‌های مختلف بافت و گره‌زنی.
+</p>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-100">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-rocket-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-3">مسیر آینده</h4>
+<p class="text-gray-700">
+در حال یادگیری ابزارهای دیجیتال مارکتینگ برای توسعه برند و گسترش دامنه مخاطبان. همچنین، تلاش برای ترکیب تکنیک‌های سنتی با فناوری‌های جدید و ایجاد محصولات نوآورانه.
+</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section id="skills" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">مهارت‌های من</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Art Skills -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3">
+<i class="ri-palette-line text-primary"></i>
+</div>
+مهارت‌های هنری
+</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">طراحی و نقاشی</span>
+<span>90%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">دودلینگ</span>
+<span>95%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">طراحی محصول</span>
+<span>85%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">ترکیب رنگ</span>
+<span>80%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Craft Skills -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3">
+<i class="ri-scissors-line text-primary"></i>
+</div>
+مهارت‌های صنایع دستی
+</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">بافت پاراکورد</span>
+<span>95%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">گره‌زنی</span>
+<span>90%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">کار با چرم</span>
+<span>75%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">ساخت زیورآلات</span>
+<span>85%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Digital Skills -->
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6 flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3">
+<i class="ri-computer-line text-primary"></i>
+</div>
+مهارت‌های دیجیتال (در حال یادگیری)
+</h3>
+<div class="space-y-6">
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">Google Ads</span>
+<span>60%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 60%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">Google Analytics</span>
+<span>55%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 55%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">Google Tag Manager</span>
+<span>50%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 50%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<span class="font-medium">دیجیتال مارکتینگ</span>
+<span>65%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2">
+<div class="bg-secondary h-2 rounded-full" style="width: 65%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Skills Chart -->
+<div class="mt-16">
+<h3 class="text-xl font-semibold text-center mb-8">نمودار مهارت‌ها</h3>
+<div id="skills-chart" class="skill-chart"></div>
+</div>
+</div>
+</section>
+<!-- Portfolio Section -->
+<section id="portfolio" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-6">نمونه کارها</h2>
+<p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+مجموعه‌ای از کارهای هنری و محصولات دست‌ساز من. از طراحی‌های دودلینگ تا محصولات پاراکوردی برند «گره بقا».
+</p>
+<!-- Portfolio Filters -->
+<div class="flex justify-center mb-10">
+<div class="inline-flex bg-gray-100 p-1 rounded-full">
+<button class="filter-btn active px-5 py-2 rounded-full text-sm whitespace-nowrap" data-filter="all"></button>
+<button class="filter-btn px-5 py-2 rounded-full text-sm whitespace-nowrap" data-filter="art">طراحی و نقاشی</button>
+<button class="filter-btn px-5 py-2 rounded-full text-sm whitespace-nowrap" data-filter="paracord">محصولات پاراکوردی</button>
+</div>
+</div>
+<!-- Portfolio Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Portfolio Item 1 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="art">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/8f4ae82312cce70c3cb09fc3821bb06c.jpeg" alt="نمونه کار دودلینگ" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">طراحی دودلینگ انتزاعی</h3>
+<p class="text-white text-sm mb-3">ترکیبی از خطوط و اشکال هندسی که فضایی رویایی و پیچیده را خلق می‌کند.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">دودلینگ</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">طراحی</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Item 2 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="paracord">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/a6a5e0798f51f155065cee2d60890dc9.jpeg" alt="دستبندهای پاراکورد" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">مجموعه دستبندهای پاراکورد</h3>
+<p class="text-white text-sm mb-3">دستبندهای دست‌ساز با تکنیک‌های مختلف بافت و در رنگ‌های طبیعی و زیبا.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">پاراکورد</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">دستبند</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Item 3 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="paracord">
+<img src="https://readdy.ai/api/search-image?query=A%20collection%20of%20handcrafted%20paracord%20keychains%20displayed%20on%20a%20rustic%20wooden%20surface.%20The%20keychains%20feature%20various%20intricate%20knot%20patterns%20and%20designs%20in%20natural%20colors%20like%20olive%20green%2C%20brown%2C%20and%20tan.%20Each%20keychain%20has%20metal%20hardware%20attachments%20and%20demonstrates%20excellent%20craftsmanship%20with%20tight%2C%20precise%20knots.%20The%20lighting%20is%20warm%20and%20natural%2C%20highlighting%20the%20texture%20of%20the%20paracord%20material.%20The%20composition%20shows%20multiple%20keychains%20arranged%20in%20an%20aesthetically%20pleasing%20manner%20that%20showcases%20the%20variety%20of%20designs%20and%20techniques%20used.&width=600&height=600&seq=6&orientation=squarish" alt="جاکلیدی‌های پاراکورد" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">جاکلیدی‌های پاراکورد</h3>
+<p class="text-white text-sm mb-3">جاکلیدی‌های کاربردی و زیبا با طرح‌های متنوع و کیفیت بالا.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">پاراکورد</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">جاکلیدی</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Item 4 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="art">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/e3e90a6f2276cdae4a5043243d2a72dd.jpeg" alt="نقاشی انتزاعی" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">نقاشی انتزاعی با الهام از طبیعت</h3>
+<p class="text-white text-sm mb-3">ترکیبی از رنگ‌های گرم و فرم‌های ارگانیک که حس زندگی و جنبش را القا می‌کند.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">نقاشی</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">انتزاعی</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Item 5 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="paracord">
+<img src="https://readdy.ai/api/search-image?query=A%20collection%20of%20handcrafted%20paracord%20dog%20collars%20and%20leashes%20arranged%20on%20a%20natural%20wooden%20surface.%20The%20products%20showcase%20various%20knotting%20techniques%20and%20patterns%20in%20earthy%20colors%20like%20olive%20green%2C%20brown%2C%20and%20tan.%20The%20craftsmanship%20is%20evident%20in%20the%20precise%20knots%2C%20durable%20hardware%20attachments%2C%20and%20clean%20finishing.%20The%20lighting%20is%20soft%20and%20natural%2C%20highlighting%20the%20texture%20of%20the%20paracord%20material.%20The%20composition%20shows%20multiple%20items%20arranged%20in%20an%20aesthetically%20pleasing%20manner%20that%20demonstrates%20both%20their%20functional%20design%20and%20artistic%20appeal.&width=600&height=600&seq=8&orientation=squarish" alt="قلاده و لیش سگ پاراکوردی" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">قلاده و لیش سگ پاراکوردی</h3>
+<p class="text-white text-sm mb-3">محصولات با دوام و زیبا برای حیوانات خانگی با طراحی منحصر به فرد.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">پاراکورد</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">لوازم حیوانات</span>
+</div>
+</div>
+</div>
+<!-- Portfolio Item 6 -->
+<div class="portfolio-item relative overflow-hidden rounded-lg shadow-sm" data-category="art">
+<img src="https://static.readdy.ai/image/920ec5765011d13a2fc4ed0973fe0037/4df0f9b76b76a5769cebf8ed417f0eaf.jpeg" alt="طراحی با الهام از طبیعت" class="w-full h-72 object-cover">
+<div class="portfolio-overlay absolute inset-0 bg-primary bg-opacity-80 flex flex-col justify-end p-6">
+<h3 class="text-xl font-semibold text-white mb-2">طراحی با الهام از طبیعت</h3>
+<p class="text-white text-sm mb-3">تصویرسازی دقیق و ظریف از عناصر طبیعی با تکنیک دودلینگ.</p>
+<div class="flex space-x-3 space-x-reverse">
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">طراحی</span>
+<span class="bg-white bg-opacity-20 text-white text-xs px-3 py-1 rounded-full">طبیعت</span>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#contact" class="inline-block bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">برای سفارش تماس بگیرید</a>
+</div>
+</div>
+</section>
+<!-- Resume Section -->
+<section id="resume" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-12">رزومه و تجربیات</h2>
+<div class="flex justify-end mb-8">
+<a href="#" class="flex items-center bg-white text-primary px-5 py-2 rounded-button border border-primary hover:bg-primary hover:text-white transition-colors whitespace-nowrap">
+<i class="ri-download-line ml-2"></i>
+دانلود رزومه
+</a>
+</div>
+<div class="relative">
+<!-- Timeline -->
+<div class="hidden md:block absolute right-0 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+<!-- Timeline Items -->
+<div class="space-y-12">
+<!-- Timeline Item 1 -->
+<div class="timeline-item relative pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm mr-6 md:mr-12">
+<div class="flex flex-wrap justify-between items-start mb-4">
+<h3 class="text-xl font-semibold">مدیر و بنیانگذار برند «گره بقا»</h3>
+<span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full mt-2 md:mt-0">1403 - اکنون</span>
+</div>
+<p class="text-gray-700 mb-4">
+طراحی، تولید و فروش محصولات پاراکوردی و دست‌ساز با کیفیت بالا. مدیریت کامل برند از طراحی محصول تا بازاریابی و فروش. ایجاد محتوا برای شبکه‌های اجتماعی و تعامل با مشتریان.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">مدیریت برند</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">طراحی محصول</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">تولید دست‌ساز</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">بازاریابی</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 2 -->
+<div class="timeline-item relative pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm mr-6 md:mr-12">
+<div class="flex flex-wrap justify-between items-start mb-4">
+<h3 class="text-xl font-semibold">شرکت در نمایشگاه‌های هنری</h3>
+<span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full mt-2 md:mt-0">۱۳۹۵ - ۱۳۹۸</span>
+</div>
+<p class="text-gray-700 mb-4">
+شرکت در چندین نمایشگاه گروهی هنری با ارائه آثار دودلینگ و طراحی‌های انتزاعی. همکاری با گالری‌های مختلف و هنرمندان دیگر برای برگزاری رویدادهای هنری.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">نمایشگاه هنری</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">دودلینگ</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">هنرهای تجسمی</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 3 -->
+<div class="timeline-item relative pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm mr-6 md:mr-12">
+<div class="flex flex-wrap justify-between items-start mb-4">
+<h3 class="text-xl font-semibold">کارگاه‌های آموزشی پاراکورد</h3>
+<span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full mt-2 md:mt-0">1403 - اکنون </span>
+</div>
+<p class="text-gray-700 mb-4">
+برگزاری کارگاه‌های آموزشی تکنیک‌های پاراکورد برای علاقه‌مندان. آموزش انواع گره‌ها و بافت‌ها و کاربردهای عملی پاراکورد در زندگی روزمره و طبیعت‌گردی.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">آموزش</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">پاراکورد</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">کارگاه</span>
+</div>
+</div>
+</div>
+<!-- Timeline Item 4 -->
+<div class="timeline-item relative pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm mr-6 md:mr-12">
+<div class="flex flex-wrap justify-between items-start mb-4">
+<h3 class="text-xl font-semibold">یادگیری ابزارهای دیجیتال مارکتینگ</h3>
+<span class="bg-primary bg-opacity-10 text-primary text-sm px-3 py-1 rounded-full mt-2 md:mt-0">1404 - اکنون</span>
+</div>
+<p class="text-gray-700 mb-4">
+در حال یادگیری و تسلط بر ابزارهای دیجیتال مارکتینگ مانند Google Ads، Google Tag Manager و Google Analytics برای توسعه برند و افزایش فروش محصولات.
+</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">دیجیتال مارکتینگ</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">Google Ads</span>
+<span class="bg-gray-100 text-gray-700 text-xs px-3 py-1 rounded-full">Analytics</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Education & Certifications -->
+<div class="mt-20">
+<h3 class="text-2xl font-semibold mb-8">تحصیلات و گواهینامه‌ها</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-graduation-cap-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-2">کارشناسی روانشناسی</h4>
+<p class="text-gray-600 mb-3">دانشگاه آزاد اسلامی واحد یادگار امام شهر ری، ۱۳۸۶ - ۱۳۹۰</p>
+<p class="text-gray-700">
+تحصیل در رشته روانشناسی با تمرکز بر روانشناسی هنر و خلاقیت. مطالعه تأثیر هنر بر سلامت روان و رشد شخصی.
+</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-graduation-cap-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-2">فعالیت هنری خودآموخته
+</h4>
+<p class="text-gray-600 mb-3">1393 - اکنون
+</p>
+<p class="text-gray-700">پژوهش و تمرین شخصی در حوزه‌ی طراحی دستی، نقاشی (دودلینگ‌آرت) و شرکت در نمایشگاه‌های گروهی و مستقل.
+</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-award-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-2">دوره جامع دیجیتال مارکتینگ</h4>
+<p class="text-gray-600 mb-3">آکادمی دیجیتال مارکتینگ ایران، 1404 - در حال انجام</p>
+<p class="text-gray-700">
+یادگیری اصول و تکنیک‌های دیجیتال مارکتینگ، تبلیغات آنلاین، بهینه‌سازی موتورهای جستجو و تحلیل داده‌ها.
+</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-file-list-3-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-2">گواهینامه Google Ads</h4>
+<p class="text-gray-600 mb-3">Google Skillshop، 1404</p>
+<p class="text-gray-700">
+کسب گواهینامه رسمی Google Ads برای تبلیغات جستجو و نمایشی. آشنایی با اصول بهینه‌سازی کمپین‌های تبلیغاتی.
+</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-primary bg-opacity-10 rounded-full mb-4">
+<i class="ri-book-open-line text-primary ri-lg"></i>
+</div>
+<h4 class="text-xl font-semibold mb-2">کارگاه تخصصی تکنیک‌های پاراکورد</h4>
+<p class="text-gray-600 mb-3">انجمن طبیعت‌گردی ایران ، 1404   </p>
+<p class="text-gray-700">
+شرکت در کارگاه تخصصی تکنیک‌های پیشرفته پاراکورد و کاربردهای آن در طبیعت‌گردی و شرایط اضطراری.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<h2 class="text-3xl font-bold text-center mb-6">تماس با من</h2>
+<p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+برای سفارش محصولات، همکاری هنری یا هر گونه سوال دیگری، از طریق فرم زیر یا راه‌های ارتباطی دیگر با من در تماس باشید.
+</p>
+<div class="flex flex-col md:flex-row gap-10">
+<!-- Contact Form -->
+<div class="w-full md:w-2/3 bg-gray-50 p-8 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6">ارسال پیام</h3>
+<form id="contact-form">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-gray-700 mb-2">نام و نام خانوادگی</label>
+<input type="text" id="name" class="w-full px-4 py-3 rounded border-none bg-white focus:ring-2 focus:ring-primary focus:ring-opacity-50" placeholder="نام خود را وارد کنید">
+</div>
+<div>
+<label for="email" class="block text-gray-700 mb-2">ایمیل</label>
+<input type="email" id="email" class="w-full px-4 py-3 rounded border-none bg-white focus:ring-2 focus:ring-primary focus:ring-opacity-50" placeholder="ایمیل خود را وارد کنید">
+</div>
+</div>
+<div class="mb-6">
+<label for="subject" class="block text-gray-700 mb-2">موضوع</label>
+<input type="text" id="subject" class="w-full px-4 py-3 rounded border-none bg-white focus:ring-2 focus:ring-primary focus:ring-opacity-50" placeholder="موضوع پیام خود را وارد کنید">
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">پیام</label>
+<textarea id="message" rows="5" class="w-full px-4 py-3 rounded border-none bg-white focus:ring-2 focus:ring-primary focus:ring-opacity-50" placeholder="پیام خود را بنویسید"></textarea>
+</div>
+<div class="mb-6">
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+<span class="mr-2">با قوانین حریم خصوصی موافقم</span>
+</label>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 rounded-button hover:bg-opacity-90 transition-all whitespace-nowrap">ارسال پیام</button>
+</form>
+</div>
+<!-- Contact Info -->
+<div class="w-full md:w-1/3">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm mb-8">
+<h3 class="text-xl font-semibold mb-6">اطلاعات تماس</h3>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3 mt-1">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">ایمیل</h4>
+<p class="text-gray-700">farzadsirvaan@gmail.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3 mt-1">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">تلفن</h4>
+<p class="text-gray-700">۰۹۱۲۳۴۵۶۷۸۹</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full ml-3 mt-1">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">آدرس</h4>
+<p class="text-gray-700">تهران، خیابان ولیعصر، کارگاه هنری گره بقا</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6">شبکه‌های اجتماعی</h3>
+<div class="flex space-x-4 space-x-reverse">
+<a href="https://www.instagram.com/gereh_bagha" title="صفحه اینستاگرام گره بقا" aria-label="صفحه اینستاگرام گره بقا" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-telegram-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-line"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full text-primary hover:bg-primary hover:text-white transition-colors">
+<i class="ri-whatsapp-line"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<h3 class="text-2xl font-bold mb-2">فرزاد محمدی</h3>
+<p class="text-gray-400">هنرمند و سازنده محصولات دست‌ساز</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#home" class="hover:text-primary transition-colors">خانه</a>
+<a href="#about" class="hover:text-primary transition-colors">درباره من</a>
+<a href="#skills" class="hover:text-primary transition-colors">مهارت‌ها</a>
+<a href="#portfolio" class="hover:text-primary transition-colors">نمونه کارها</a>
+<a href="#resume" class="hover:text-primary transition-colors">رزومه</a>
+<a href="#contact" class="hover:text-primary transition-colors">تماس</a>
+</div>
+</div>
+<hr class="border-gray-800 my-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 mb-4 md:mb-0">© ۱۴۰۴ فرزاد محمدی. تمامی حقوق محفوظ است.</p>
+<div class="flex space-x-4 space-x-reverse">
+<a href="https://www.instagram.com/gereh_bagha" title="صفحه اینستاگرام گره بقا" aria-label="صفحه اینستاگرام گره بقا" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-instagram-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-telegram-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-linkedin-line ri-lg"></i>
+</a>
+<a href="#" class="text-gray-400 hover:text-primary transition-colors">
+<i class="ri-whatsapp-line ri-lg"></i>
+</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="navigation-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile Menu Toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+mobileMenuButton.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+// Change icon based on menu state
+const icon = mobileMenuButton.querySelector('i');
+if (mobileMenu.classList.contains('hidden')) {
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+} else {
+icon.classList.remove('ri-menu-line');
+icon.classList.add('ri-close-line');
+}
+});
+// Close mobile menu when clicking on a link
+const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+mobileNavLinks.forEach(link => {
+link.addEventListener('click', function() {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuButton.querySelector('i');
+icon.classList.remove('ri-close-line');
+icon.classList.add('ri-menu-line');
+});
+});
+// Highlight active nav item on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+window.addEventListener('scroll', function() {
+let current = '';
+sections.forEach(section => {
+const sectionTop = section.offsetTop;
+const sectionHeight = section.clientHeight;
+if (pageYOffset >= (sectionTop - 200)) {
+current = section.getAttribute('id');
+}
+});
+navLinks.forEach(link => {
+link.classList.remove('active');
+if (link.getAttribute('href') === `#${current}`) {
+link.classList.add('active');
+}
+});
+});
+});
+</script>
+<script id="portfolio-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Portfolio Filtering
+const filterButtons = document.querySelectorAll('.filter-btn');
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+// Remove active class from all buttons
+filterButtons.forEach(btn => btn.classList.remove('active'));
+// Add active class to clicked button
+this.classList.add('active');
+const filter = this.getAttribute('data-filter');
+portfolioItems.forEach(item => {
+if (filter === 'all' || item.getAttribute('data-category') === filter) {
+item.style.display = 'block';
+} else {
+item.style.display = 'none';
+}
+});
+});
+});
+});
+</script>
+<script id="contact-form-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Contact Form Submission
+const contactForm = document.getElementById('contact-form');
+contactForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const subject = document.getElementById('subject').value;
+const message = document.getElementById('message').value;
+// Simple validation
+if (!name || !email || !message) {
+alert('لطفاً تمام فیلدهای ضروری را پر کنید.');
+return;
+}
+// Here you would normally send the form data to a server
+// For this example, we'll just show a success message
+alert('پیام شما با موفقیت ارسال شد. به زودی با شما تماس خواهیم گرفت.');
+// Reset form
+contactForm.reset();
+});
+});
+</script>
+<script id="skills-chart-script">
+document.addEventListener('DOMContentLoaded', function() {
+// Initialize Skills Chart
+const skillsChart = echarts.init(document.getElementById('skills-chart'));
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+radar: {
+indicator: [
+{ name: 'طراحی و نقاشی', max: 100 },
+{ name: 'دودلینگ', max: 100 },
+{ name: 'پاراکورد', max: 100 },
+{ name: 'طراحی محصول', max: 100 },
+{ name: 'دیجیتال مارکتینگ', max: 100 },
+{ name: 'مدیریت برند', max: 100 }
+],
+radius: '65%',
+axisName: {
+color: '#1f2937',
+fontSize: 12
+},
+splitArea: {
+areaStyle: {
+color: ['#fff']
+}
+},
+splitLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+},
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+}
+},
+series: [
+{
+name: 'مهارت‌های من',
+type: 'radar',
+data: [
+{
+value: [90, 95, 90, 85, 60, 75],
+name: 'سطح مهارت',
+areaStyle: {
+color: 'rgba(87, 181, 231, 0.1)'
+},
+lineStyle: {
+color: 'rgba(87, 181, 231, 1)',
+width: 2
+},
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+}
+}
+]
+}
+]
+};
+skillsChart.setOption(option);
+// Resize chart when window size changes
+window.addEventListener('resize', function() {
+skillsChart.resize();
+});
+});
+</script>
+</body>
+</html>
